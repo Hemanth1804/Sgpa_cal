@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sgpa_style.css">
+    <title>VTU SGPA CALCULATER</title>
+</head>
+<body>
+    <div class="container">
+        <header class="box">
+            Enter Your Cource Information
+        </header>
+        <div class="sub">
+            <form action="">
+        <select name="" id="branch" class="select_c" required>
+            <option value="">--Branch--</option>
+            <option value="C">Chemistry Cycle</option>
+            <option value="P">Physics Cycle</option>
+        </select>
+        <select name="" id="sem" class="select_c" required>
+            <option value="">--Sem--</option>
+            <option value="1">1st SEM</option>
+            <option value="2">2nd SEM</option>
+        </select>
+        <select name="" id="scheme" class="select_c" required>
+            <option value="">--Scheme--</option>
+            <option value="2022">2022 Scheme</option>
+        </select>
+        <button type="button" onclick="redirect()">submit</button>
+        </form>
+    </div>
+    </div>
+    <script>
+        function redirect() {
+            var branch = document.getElementById('branch').value;
+            var sem = document.getElementById('sem').value;
+            var scheme = document.getElementById('scheme').value;
+            if (branch === 'P' && (sem === '1' ||sem ==='2') && scheme === '2022') {
+                window.location.href = 'main_physics.html';
+            }
+            else if(branch === 'C' && (sem === '1' ||sem ==='2') && scheme === '2022'){
+                window.location.href = 'main_chemistry.html';
+            }
+            else{
+                alert("chooce correct option");
+            }
+        }
+    </script>
+</body>
+</html>
